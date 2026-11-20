@@ -1,15 +1,15 @@
 import { BasePage } from './BasePage.js';
 
-// LoginPage, BasePage er child class
+// LoginPage, BasePage  child class
 export class LoginPage extends BasePage {
-  constructor(page ) {
+  constructor(page) {
     super(page); // parent er constructor chalay, tai this.page pawa jay
 
-    // Login form  locator
+    // Login form er locator
     this.emailInput = page.locator('#Email');
     this.passwordInput = page.locator('#Password');
     this.loginButton = page.locator('input.login-button');
-    this.errorSummary =  page.locator('.validation-summary-errors');
+    this.errorSummary = page.locator('.validation-summary-errors');
   }
 
   // Login page open
@@ -17,7 +17,7 @@ export class LoginPage extends BasePage {
     await this.open('/login');
   }
 
-  // Email, password, login
+  // Email, password  login
   async login(email, password) {
     await this.emailInput.fill(email);
     await this.passwordInput.fill(password);
